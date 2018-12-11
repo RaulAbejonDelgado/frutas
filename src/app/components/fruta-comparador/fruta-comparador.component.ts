@@ -37,8 +37,24 @@ export class FrutaComparadorComponent implements OnInit {
   getAllFrutas(){
     this.frutasService.getAll().subscribe(data => {
       this.arrayFrutas = data;
+      this.frutaSeleccionada = this.arrayFrutas[0];
+      this.frutaSeleccionada2 = this.arrayFrutas[1];
+
     })
     this.frutasOferta = false;
+  }
+
+  
+  frutasOfertas(){
+    this.arrayFrutasOferta = [];
+
+    for(let fruta of this.arrayFrutas){
+      if(fruta.oferta == true){
+        this.arrayFrutasOferta.push(fruta);
+        this.frutasOferta = true;
+      }
+    }
+    
   }
 
 
@@ -82,9 +98,6 @@ export class FrutaComparadorComponent implements OnInit {
   restarUno(fruta: Frutas) {
     if (fruta.cantidad <= 0) {
       this.carrito.forEach(data => {
-        if(fruta.nombre == data.nombre){
-          //this.carrito
-        }
       })
       alert("La cantidad del producto esta en 0 por lo que no puede segir restando productos");
     } else {
@@ -97,17 +110,6 @@ export class FrutaComparadorComponent implements OnInit {
 
   }
 
-  frutasOfertas(){
-    this.arrayFrutasOferta = [];
-
-    for(let fruta of this.arrayFrutas){
-      if(fruta.oferta == true){
-        this.arrayFrutasOferta.push(fruta);
-        this.frutasOferta = true;
-      }
-    }
-    
-  }
 
   buscarTexto(buscarTexto:NgForm){
 
@@ -118,7 +120,12 @@ export class FrutaComparadorComponent implements OnInit {
           this.frutaSeleccionada = fruta;
           this.mostrarResultadoBusqueda = true;
 
+
         }
+     }
+     if(buscarTexto.value.textoBusqueda ==''){
+        console.log("campos Vacio");
+        this.mostrarResultadoBusqueda = false;
      }
     
 
