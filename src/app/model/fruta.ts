@@ -24,12 +24,12 @@ export class Frutas {
     private _total: number;
    
     constructor(){
-        this._nombre = "";
-        this._precio = 0;
-        this._calorias = 0;
+        this._nombre = "Melocoton";
+        this._precio = 2;
+        this._calorias = 234;
         this._oferta = false;
-        this._descuento = 0;
-        this._imagen = "";
+        this._descuento = 3;
+        this._imagen = "https://soycomocomo.es/media/2015/06/melocoton-1.jpg";
         this._cantidad = 0;
         this._total = 0;
     }

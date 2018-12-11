@@ -33,14 +33,14 @@
       "id": 1,
       "nombre": "Pera",
       "precio": "4.32",
-      "calorias": 0,
+      "calorias": 500,
       "colores": [
         {
           "color": "#DEE8DE"
         }
       ],
       "oferta": false,
-      "descuento": 0,
+      "descuento": 2,
       "imagen": "https://www.ayuno.es/wp-content/uploads/2017/12/propriedades-de-la-pera.jpg"
     },
     {
@@ -69,26 +69,26 @@
           "color": "#DEE8DE"
         }
       ],
-      "descuento": 0
+      "descuento": 7
     },
     {
       "id": 5,
       "nombre": "fresa",
       "precio": "2.55",
-      "calorias": 0,
+      "calorias": 345,
       "colores": [
         {
           "color": "#d2140b"
         }
       ],
       "oferta": false,
-      "descuento": 0,
+      "descuento": 3,
       "imagen": "https://static9.depositphotos.com/1642482/1149/i/450/depositphotos_11491656-stock-photo-strawberry.jpg"
     },
     {
       "nombre": "fresat",
       "precio": 2.55,
-      "calorias": 0,
+      "calorias": 222,
       "colores": [
         {
           "color": "#ebf130"
@@ -97,14 +97,14 @@
           "color": "#0ae5ea"
         }
       ],
-      "descuento": 0,
+      "descuento": 8,
       "imagen": "https://picsum.photos/300/300/?random",
       "id": 9
     },
     {
       "nombre": "fresa",
       "precio": 2.55,
-      "calorias": 0,
+      "calorias": 65,
       "colores": [
         {
           "color": "#000000"
@@ -117,8 +117,8 @@
     {
       "id": 11,
       "nombre": "color prueba",
-      "precio": "25.5",
-      "calorias": 0,
+      "precio": 25.5,
+      "calorias": 76,
       "colores": [
         {
           "color": null
@@ -128,14 +128,14 @@
         }
       ],
       "oferta": false,
-      "descuento": 0,
+      "descuento": 5,
       "imagen": "https://picsum.photos/300/300/?random"
     },
     {
       "id": 12,
       "nombre": "sdfdsfs",
       "precio": "4",
-      "calorias": 0,
+      "calorias": 87,
       "colores": [
         {
           "color": "#17e832"
@@ -151,7 +151,7 @@
         }
       ],
       "oferta": false,
-      "descuento": 0,
+      "descuento": 9,
       "imagen": "https://picsum.photos/300/300/?random"
     }
   ],

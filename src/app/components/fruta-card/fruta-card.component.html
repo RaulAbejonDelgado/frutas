@@ -1,12 +1,12 @@
 <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="{{_objeto.imagen }}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">{{_objeto.nombre }}</h5>
-      <p class="card-text">{{_objeto.precio }}</p>
-      <p class="card-text">{{_objeto.calorias }}</p>
-      <p class="card-text">{{_objeto.colores }}</p>
-      <p class="card-text">{{_objeto.oferta }}</p>
-      <p class="card-text">{{_objeto.descuento }}</p>
+      <h5 class="card-title">{{_objeto.nombre == 'Melocoton' ? 'Melocoton(fruta demo)': _objeto.nombre}}</h5>
+      <p class="card-text">Precio : {{_objeto.precio }}</p>
+      <p class="card-text">Calorias : {{_objeto.calorias }}</p>
+      <p class="card-text" *ngFor="let c of _objeto.colores" ><input type="color" value="{{c.color  }}" readonly></p>
+      <p class="card-text">Oferta : {{_objeto.oferta == false ? 'Sin oferta' : 'Oferta'}}</p>
+      <p class="card-text">Descuento {{_objeto.descuento }} %</p>
       <button (click)="comprar()" class="btn btn-block btn-outline-primary">Comprar</button>
     </div>
   </div>

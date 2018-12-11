@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Frutas } from '../../model/fruta';
+import { FrutaService } from '../../provider/frutas.service';
 
 @Component({
   selector: 'app-fruta-card',
@@ -26,9 +27,20 @@ export class FrutaCardComponent implements OnInit {
 
   //Registramos evento de salida
   @Output() clickCompra = new EventEmitter();
-  constructor() { }
+
+  frutaDemo: Frutas;
+  constructor(private frutasService:FrutaService) {
+    this.recargarTarjeta1();
+    this._objeto = new Frutas();
+
+   }
 
   ngOnInit() {
+    
+  }
+
+  recargarTarjeta1(){
+     
   }
 
   comprar() {

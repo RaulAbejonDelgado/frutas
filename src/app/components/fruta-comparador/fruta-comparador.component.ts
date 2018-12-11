@@ -32,8 +32,7 @@ export class FrutaComparadorComponent implements OnInit {
 
 
   mostrarFrutas(frutaSelecionada: Frutas){
-    // console.log("FrutaComparadorComponent - mostrarFrutas %o", frutaSelecionada)
-    // this.frutaSeleccionada = frutaSelecionada;
+
     this.frutaSeleccionada2 = this.frutaSeleccionada
     this.frutaSeleccionada = frutaSelecionada;
 
