@@ -31,7 +31,7 @@ export class FrutaCardComponent implements OnInit {
   frutaDemo: Frutas;
   constructor(private frutasService:FrutaService) {
     this.recargarTarjeta1();
-    this._objeto = new Frutas();
+    //this._objeto = new Frutas();
 
    }
 

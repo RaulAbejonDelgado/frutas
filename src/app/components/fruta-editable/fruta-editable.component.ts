@@ -71,6 +71,10 @@ export class FrutaEditableComponent implements OnInit {
     // console.log(this.formulario.value);
     this.formulario.controls.nombre.setValue(this._objeto.nombre);
     this.formulario.controls.precio.setValue(this._objeto.precio);
+    this.formulario.controls.oferta.setValue(this._objeto.oferta);
+    this.formulario.controls.calorias.setValue(this._objeto.calorias);
+    this.formulario.controls.descuento.setValue(this._objeto.descuento);
+    this.formulario.controls.imagen.setValue(this._objeto.imagen);
     //this.formulario.controls.nombre.setValue(this._objeto.nombre);
     console.log(this.formulario);
     

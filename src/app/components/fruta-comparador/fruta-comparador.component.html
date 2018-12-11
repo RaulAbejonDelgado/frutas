@@ -1,27 +1,54 @@
 <div class="row">
+    <div class="col-3">
+            <button (click)="getAllFrutas()">Todas las frutas</button>
+            <button (click)="frutasOfertas()">Frutas en oferta</button>
+    </div>
+    <div class="col-4">
+        <form #formularioBusqueda="ngForm" (ngSubmit)="buscarTexto(formularioBusqueda)">
+            <input type="text" name="textoBusqueda"  [(ngModel)]="textoBusqueda" placeholder="Buscador de frutas">
+            <button>Buscar</button>
+        </form>
+    </div>
+    <div class="col-4">
+    
+    </div>
+</div>
+<div class="row">
+        
   <div class="col-2">
+    
+    {{frutasOferta}}
+    <div [hidden]="!frutasOferta">
+        <ul>
+            <li ng-if="arrayFrutasOferta" *ngFor="let f of arrayFrutasOferta" (click)="mostrarFrutas(f)"  class="list-group-item" [class.active]="f == frutaSeleccionada || f == frutaSeleccionada2"  >{{f.nombre}}</li>
+        </ul>
+    </div>
+    <div [hidden]="frutasOferta">
+        <ul>
+            <li  *ngFor="let f of arrayFrutas" (click)="mostrarFrutas(f)"  class="list-group-item" [class.active]="f == frutaSeleccionada || f == frutaSeleccionada2"  >{{f.nombre}}</li> 
+                
+        </ul>
+    </div>
+    
+  </div>
+    
+    <div class="col-3" >
+        <app-fruta-card [_objeto]="frutaSeleccionada" (clickCompra)="actualizarCarrito($event)"></app-fruta-card>
+    </div>
+    <div class="col-3" [hidden]="mostrarResultadoBusqueda">
+        <app-fruta-card [_objeto]="frutaSeleccionada2" (clickCompra)="actualizarCarrito($event)"></app-fruta-card>
+    </div>
 
-    <ul>
-      <li *ngFor="let f of arrayFrutas" (click)="mostrarFrutas(f)"  class="list-group-item" [class.active]="f == frutaSeleccionada || f == frutaSeleccionada2"  >{{f.nombre}}</li>
-  
-    </ul>
-  </div>
-  <div class="col-3">
-      <app-fruta-card [_objeto]="frutaSeleccionada" (clickCompra)="actualizarCarrito($event)"></app-fruta-card>
-  </div>
-  <div class="col-3">
-      <app-fruta-card [_objeto]="frutaSeleccionada2" (clickCompra)="actualizarCarrito($event)"></app-fruta-card>
-  </div>
   <div class="col-3">
       Carrito
-      <div class="card" style="width: 17rem;">
+      <div class="card carrito" style="width: 17rem;">
 
           <div class="card-body">
-            <h5 class="card-title"> Total :{{totalPrecioFrutasClickados}}</h5>
+            <h5 class="card-title">Precio total :{{totalPrecioFrutasClickados}} €</h5>
             
             <p>Fruta </p>
             <p *ngFor="let f of carrito">Fruta:{{f.nombre}} <br> Precio total : {{f.total}} <br> <button (click)="restarUno(f)">-</button> Total Selecionados : {{f.cantidad}}<button (click)="sumarUno(f)">+</button> </p>
-            <button (click)="comprar()" class="btn btn-block btn-outline-primary">Comprar</button>
+            <button (click)="comprar()" class="btn btn-block btn-info">Comprar</button>
           </div>
   
       </div>

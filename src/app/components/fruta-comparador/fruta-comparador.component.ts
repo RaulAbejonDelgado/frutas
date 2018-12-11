@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FrutaService } from '../../provider/frutas.service';
 import { Frutas } from 'src/app/model/fruta';
+import { NgForm } from '../../../../node_modules/@angular/forms';
 
 @Component({
   selector: 'app-fruta-comparador',
@@ -9,12 +10,20 @@ import { Frutas } from 'src/app/model/fruta';
 })
 export class FrutaComparadorComponent implements OnInit {
   arrayFrutas : Frutas[];
+  arrayFrutasOferta : Frutas [];
+  frutasOferta : boolean;
   frutaSeleccionada : Frutas;
   frutaSeleccionada2 : Frutas;
   carrito : Frutas[];
   totalPrecioFrutasClickados : number;
+  textoBusqueda:string;
+  mostrarResultadoBusqueda: boolean;
 
   constructor(private frutasService: FrutaService) { 
+    this.textoBusqueda = "";
+    this.mostrarResultadoBusqueda = false;
+    this.frutasOferta = false;
+    this.arrayFrutasOferta = [];
     this.frutaSeleccionada = new Frutas();
     this.frutaSeleccionada2 = new Frutas();
     this.totalPrecioFrutasClickados = 0;
@@ -29,6 +38,7 @@ export class FrutaComparadorComponent implements OnInit {
     this.frutasService.getAll().subscribe(data => {
       this.arrayFrutas = data;
     })
+    this.frutasOferta = false;
   }
 
 
@@ -49,13 +59,13 @@ export class FrutaComparadorComponent implements OnInit {
     if (indice != -1) {
       this.totalPrecioFrutasClickados += frutaClick.precio;
       console.log(frutaClick.precio);
-      this.carrito[indice].cantidad += 1;
+      //this.carrito[indice].cantidad += 1;
       this.carrito[indice].total = frutaClick.cantidad * frutaClick.precio;
     } else {
 
       this.totalPrecioFrutasClickados += frutaClick.precio;
       console.log(frutaClick.precio);
-      frutaClick.cantidad += 1;
+      //frutaClick.cantidad += 1;
       frutaClick.total = frutaClick.cantidad * frutaClick.precio;
       this.carrito.push(frutaClick);
     }
@@ -71,13 +81,48 @@ export class FrutaComparadorComponent implements OnInit {
 
   restarUno(fruta: Frutas) {
     if (fruta.cantidad <= 0) {
+      this.carrito.forEach(data => {
+        if(fruta.nombre == data.nombre){
+          //this.carrito
+        }
+      })
       alert("La cantidad del producto esta en 0 por lo que no puede segir restando productos");
     } else {
       fruta.cantidad -= 1;
       fruta.total -= fruta.precio ;
       this.totalPrecioFrutasClickados -= fruta.precio;
+      
     }
 
+
+  }
+
+  frutasOfertas(){
+    this.arrayFrutasOferta = [];
+
+    for(let fruta of this.arrayFrutas){
+      if(fruta.oferta == true){
+        this.arrayFrutasOferta.push(fruta);
+        this.frutasOferta = true;
+      }
+    }
+    
+  }
+
+  buscarTexto(buscarTexto:NgForm){
+
+
+     for(let fruta of this.arrayFrutas){
+        console.log(fruta.nombre.toLowerCase()) +" - "+ buscarTexto.value.textoBusqueda.toLowerCase();
+        if(fruta.nombre.toLowerCase() === buscarTexto.value.textoBusqueda.toLowerCase() ){
+          this.frutaSeleccionada = fruta;
+          this.mostrarResultadoBusqueda = true;
+
+        }
+     }
+    
+
+    
 
   }
 

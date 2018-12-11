@@ -4,7 +4,8 @@
     <div class="card" style="width: 18rem;">
 
       <div class="card-head">
-        <input type="number" type="text" disabled formControlName="id" value="{{objeto.id}}">
+            <h5 class="card-title">{{objeto.nombre}}</h5>
+        <input type="number" type="hidden" disabled formControlName="id" value="{{objeto.id}}">
 
         <img class="card-img-top" src="{{objeto.imagen}}" alt="Card image cap">
 
@@ -14,7 +15,7 @@
 
       </div>
       <div class="card-body">
-        <h5 class="card-title">{{objeto.nombre}}</h5>
+        
         <p ng-if="!objeto.oferta" class="card-text">Precio : {{objeto.precio | currency:'EUR'}}</p>
         <p ng-if="objeto.oferta" class="card-text">Precio :<del> {{objeto.precio | currency:'EUR'}}</del> , Descuento :
           {{(objeto.precio*objeto.descuento / 100 | number:'1.2-2')}}, total Precio final :
