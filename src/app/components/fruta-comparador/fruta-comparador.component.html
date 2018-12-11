@@ -16,10 +16,10 @@
       <div class="card" style="width: 17rem;">
 
           <div class="card-body">
-            <h5 class="card-title"> Total :</h5>
+            <h5 class="card-title"> Total :{{totalPrecioFrutasClickados}}</h5>
             
             <p>Fruta </p>
-            <p *ngFor="let f of carrito">Fruta:{{f.nombre}} <br> Precio total : {{f.total}} <br> <button (click)="restarUno(j)">-</button> Total Selecionados : {{f.cantidad}}<button (click)="sumarUno(j)">+</button> </p>
+            <p *ngFor="let f of carrito">Fruta:{{f.nombre}} <br> Precio total : {{f.total}} <br> <button (click)="restarUno(f)">-</button> Total Selecionados : {{f.cantidad}}<button (click)="sumarUno(f)">+</button> </p>
             <button (click)="comprar()" class="btn btn-block btn-outline-primary">Comprar</button>
           </div>
   

@@ -34,6 +34,7 @@
       "nombre": "Pera",
       "precio": "4.32",
       "calorias": 500,
+      "cantidad":0,
       "colores": [
         {
           "color": "#DEE8DE"
@@ -48,6 +49,7 @@
       "nombre": "kiwi",
       "precio": 6.68,
       "calorias": 320,
+      "cantidad":0,
       "imagen": "https://5.imimg.com/data5/KU/QG/MY-41533060/kiwi-fruit-500x500.jpg",
       "oferta": false,
       "colores": [
@@ -62,6 +64,7 @@
       "nombre": "Aguacate",
       "precio": 4.21,
       "calorias": 346,
+      "cantidad":0,
       "imagen": "https://comefruta.es/wp-content/uploads/aguacate-600x400.jpg",
       "oferta": false,
       "colores": [
@@ -76,6 +79,7 @@
       "nombre": "fresa",
       "precio": "2.55",
       "calorias": 345,
+      "cantidad":0,
       "colores": [
         {
           "color": "#d2140b"
@@ -89,6 +93,7 @@
       "nombre": "fresat",
       "precio": 2.55,
       "calorias": 222,
+      "cantidad":0,
       "colores": [
         {
           "color": "#ebf130"
@@ -105,6 +110,7 @@
       "nombre": "fresa",
       "precio": 2.55,
       "calorias": 65,
+      "cantidad":0,
       "colores": [
         {
           "color": "#000000"
@@ -119,6 +125,7 @@
       "nombre": "color prueba",
       "precio": 25.5,
       "calorias": 76,
+      "cantidad":0,
       "colores": [
         {
           "color": null
@@ -136,6 +143,7 @@
       "nombre": "sdfdsfs",
       "precio": "4",
       "calorias": 87,
+      "cantidad":0,
       "colores": [
         {
           "color": "#17e832"

@@ -17,6 +17,7 @@ export class FrutaComparadorComponent implements OnInit {
   constructor(private frutasService: FrutaService) { 
     this.frutaSeleccionada = new Frutas();
     this.frutaSeleccionada2 = new Frutas();
+    this.totalPrecioFrutasClickados = 0;
     this.carrito = [];
     this.getAllFrutas();
   }
@@ -59,6 +60,27 @@ export class FrutaComparadorComponent implements OnInit {
       this.carrito.push(frutaClick);
     }
   }
+
+  sumarUno(fruta: Frutas) {
+
+    fruta.cantidad += 1;
+    fruta.total = fruta.precio * fruta.cantidad;
+    this.totalPrecioFrutasClickados += fruta.precio;
+
+  }
+
+  restarUno(fruta: Frutas) {
+    if (fruta.cantidad <= 0) {
+      alert("La cantidad del producto esta en 0 por lo que no puede segir restando productos");
+    } else {
+      fruta.cantidad -= 1;
+      fruta.total -= fruta.precio ;
+      this.totalPrecioFrutasClickados -= fruta.precio;
+    }
+
+
+  }
+
 
 
 
