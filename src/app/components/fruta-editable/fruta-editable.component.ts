@@ -67,10 +67,12 @@ export class FrutaEditableComponent implements OnInit {
     
     console.log(this._objeto);
     console.log(this.formulario);
-    this.formulario.setValue(this._objeto);
+    //this.formulario.setValue(this._objeto);
     // console.log(this.formulario.value);
     this.formulario.controls.nombre.setValue(this._objeto.nombre);
     this.formulario.controls.precio.setValue(this._objeto.precio);
+    //this.formulario.controls.nombre.setValue(this._objeto.nombre);
+    console.log(this.formulario);
     
     
   }
@@ -106,12 +108,6 @@ export class FrutaEditableComponent implements OnInit {
         });
   }
 
-  // crearColorNuevoFormGroup(){
-  //   console.log(this.colorNuevo.value);
-  //   return new FormGroup({
-  //       colorNuevo : new FormControl(this.colorNuevo.value)
-  //   })
-  // }
 
   nuevoColor(){    
     let arrayColores = this.formulario.get('coloresNuevos') as FormArray;
