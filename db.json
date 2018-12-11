@@ -132,24 +132,27 @@
       "imagen": "https://picsum.photos/300/300/?random"
     },
     {
-      "nombre": "sdfdsfsdf",
+      "id": 12,
+      "nombre": "sdfdsfs",
       "precio": "4",
-      "calorias": "e",
+      "calorias": 0,
       "colores": [
         {
           "color": "#17e832"
         },
         {
-          "color": "#fb84d1"
+          "color": "#400080"
         },
         {
-          "color": "#000000"
+          "color": "#ff8000"
+        },
+        {
+          "color": "#ff80ff"
         }
       ],
       "oferta": false,
       "descuento": 0,
-      "imagen": "https://picsum.photos/300/300/?random",
-      "id": 12
+      "imagen": "https://picsum.photos/300/300/?random"
     }
   ],
   "juegos": [
