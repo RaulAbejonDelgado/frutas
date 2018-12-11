@@ -1,0 +1,187 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Hacer filtrado",
+      "terminado": true
+    },
+    {
+      "id": 3,
+      "titulo": "Todavia no se",
+      "terminado": false
+    }
+  ],
+  "frutas": [
+    {
+      "id": 1,
+      "nombre": "Pera",
+      "precio": "4.32",
+      "calorias": 0,
+      "colores": [
+        {
+          "color": "#DEE8DE"
+        }
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://www.ayuno.es/wp-content/uploads/2017/12/propriedades-de-la-pera.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "kiwi",
+      "precio": 6.68,
+      "calorias": 320,
+      "imagen": "https://5.imimg.com/data5/KU/QG/MY-41533060/kiwi-fruit-500x500.jpg",
+      "oferta": false,
+      "colores": [
+        {
+          "color": "#DEE8DE"
+        }
+      ],
+      "descuento": 0
+    },
+    {
+      "id": 3,
+      "nombre": "Aguacate",
+      "precio": 4.21,
+      "calorias": 346,
+      "imagen": "https://comefruta.es/wp-content/uploads/aguacate-600x400.jpg",
+      "oferta": false,
+      "colores": [
+        {
+          "color": "#DEE8DE"
+        }
+      ],
+      "descuento": 0
+    },
+    {
+      "id": 5,
+      "nombre": "fresa",
+      "precio": "2.55",
+      "calorias": 0,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://static9.depositphotos.com/1642482/1149/i/450/depositphotos_11491656-stock-photo-strawberry.jpg"
+    },
+    {
+      "nombre": "fresat",
+      "precio": 2.55,
+      "calorias": 0,
+      "colores": [
+        {
+          "color": "#ebf130"
+        },
+        {
+          "color": "#0ae5ea"
+        }
+      ],
+      "descuento": 0,
+      "imagen": "https://picsum.photos/300/300/?random",
+      "id": 9
+    },
+    {
+      "nombre": "fresa",
+      "precio": 2.55,
+      "calorias": 0,
+      "colores": [
+        {
+          "color": "#000000"
+        }
+      ],
+      "descuento": 0,
+      "imagen": "https://picsum.photos/300/300/?random",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "nombre": "color prueba",
+      "precio": "25.5",
+      "calorias": 0,
+      "colores": [
+        {
+          "color": null
+        },
+        {
+          "colorNuevo": null
+        }
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://picsum.photos/300/300/?random"
+    },
+    {
+      "nombre": "sdfdsfsdf",
+      "precio": "4",
+      "calorias": "e",
+      "colores": [
+        {
+          "color": "#17e832"
+        },
+        {
+          "color": "#fb84d1"
+        },
+        {
+          "color": "#000000"
+        }
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://picsum.photos/300/300/?random",
+      "id": 12
+    }
+  ],
+  "juegos": [
+    {
+      "titulo": "diablo",
+      "imagen": "",
+      "precio": 35,
+      "anio": 1998,
+      "alquilado": false,
+      "descripcion": "loren",
+      "cantidad": 0,
+      "descuento": 0
+    },
+    {
+      "titulo": "fallout",
+      "imagen": "",
+      "precio": 35,
+      "anio": 1998,
+      "alquilado": false,
+      "descripcion": "loren",
+      "cantidad": 0,
+      "descuento": 0
+    },
+    {
+      "titulo": "lineage2",
+      "imagen": "",
+      "precio": 35,
+      "anio": 1998,
+      "alquilado": false,
+      "descripcion": "loren",
+      "cantidad": 0,
+      "descuento": 0
+    }
+  ]
+}

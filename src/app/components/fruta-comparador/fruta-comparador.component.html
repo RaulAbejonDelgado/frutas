@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-1">
+
+    <ul>
+      <li *ngFor="let f of arrayFrutas" (click)="mostrarFrutas(f)">{{f.nombre}}</li>
+    </ul>
+  </div>
+  <div class="col-4">
+      <app-fruta-card [_objeto]="frutaSeleccionada" (clickCompra)="actualizarCarrito($event)"></app-fruta-card>
+  </div>
+  <div class="col-4">
+      <app-fruta-card [_objeto]="frutaSeleccionada2" (clickCompra)="actualizarCarrito($event)"></app-fruta-card>
+  </div>
+  <div class="col-3">
+      Carrito
+      <div class="card" style="width: 17rem;">
+
+          <div class="card-body">
+            <h5 class="card-title"> Total :</h5>
+            
+            <p>Fruta </p>
+            <p *ngFor="let f of carrito">Fruta:{{f.nombre}} <br> Precio total : {{f.total}} <br> <button (click)="restarUno(j)">-</button> Total Selecionados : {{f.cantidad}}<button (click)="sumarUno(j)">+</button> </p>
+            <button (click)="comprar()" class="btn btn-block btn-outline-primary">Comprar</button>
+          </div>
+  
+      </div>
+  </div>
+
+
+  
+  </div>
+
+          

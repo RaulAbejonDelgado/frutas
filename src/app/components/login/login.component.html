@@ -1,0 +1,31 @@
+
+<h2>Aceso privado</h2>
+
+<p class="test-danger">
+  {{mensaje}}
+</p>
+<ul>
+  <li><b>nombre</b> : admin</li>
+  <li><b>password </b>: 12345678</li>
+</ul>
+<form [formGroup]="formulario" (ngSubmit)="sumitar()">
+  {{formulario.status | json}}
+  {{formulario.value | json}}
+  <div class="form-group">
+    <label for="nombre"> Nombre:</label>
+   
+    <input type="text" formControlName="nombre" class="form-control" name="nombre">
+    <!-- <small *ngIf="formulario.controls.nombre.invalid" class="text-danger">Errores de validacion minimi 2 caracteres maximo 50</small>
+    <small *ngIf="formulario.controls.nombre.valid" class="text-success">Correcto</small> -->
+  
+</div>
+<div class="form-group">
+  <label for="nombre"> Password:</label>
+ 
+  <input type="text" formControlName="password" class="form-control" name="password">
+  <!-- <small *ngIf="formulario.controls.nombre.invalid" class="text-danger">Errores de validacion minimi 2 caracteres maximo 50</small>
+  <small *ngIf="formulario.controls.nombre.valid" class="text-success">Correcto</small> -->
+
+</div>
+<input type="submit" value="entrar"  ><!--[disbled]="formulario.status === VALID"-->
+</form>

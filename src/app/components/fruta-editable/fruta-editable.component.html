@@ -1,0 +1,136 @@
+
+<div class="row justify-content-md-center">
+  <div class="col-4">
+    <div class="card" style="width: 18rem;">
+
+      <div class="card-head">
+        <input type="number" type="text" disabled formControlName="id" value="{{objeto.id}}">
+
+        <img class="card-img-top" src="{{objeto.imagen}}" alt="Card image cap">
+
+
+        <span ng-if="objeto.oferta" class="descuento"> {{objeto.descuento}} %</span>
+        <span class="calorias">{{objeto.calorias}} kcal</span>
+
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{objeto.nombre}}</h5>
+        <p ng-if="!objeto.oferta" class="card-text">Precio : {{objeto.precio | currency:'EUR'}}</p>
+        <p ng-if="objeto.oferta" class="card-text">Precio :<del> {{objeto.precio | currency:'EUR'}}</del> , Descuento :
+          {{(objeto.precio*objeto.descuento / 100 | number:'1.2-2')}}, total Precio final :
+          {{(objeto.precio*objeto.descuento / 100) - objeto.precio | number:'1.2-2'}} </p>
+          <p *ngFor="let color of _objeto.colores; let i = index" ><span >{{_objeto.colores[i].color  }} </span>
+            <input type="color" disabled value="{{_objeto.colores[i].color}}"></p>
+
+        <button (click)="comprar(event)" class="btn btn-primary">Comprar</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-8">
+   
+      <h4>Edicion del articulo</h4>
+      <!-- Importante desactivar las validaciones en html5-->
+
+      <form [formGroup]="formulario" (ngSubmit)="actualizar()" novalidate>
+      
+          <div class="form-row justify-content-md-center">
+          <div class="form-group">
+              <label for="nombre"> Nombre:</label>
+             
+              <input type="text" formControlName="nombre" value="{{objeto.nombre}}" class="form-control" name="nombre">
+              <small *ngIf="formulario.controls.nombre.invalid" class="text-danger">Errores de validacion minimi 2 caracteres maximo 50</small>
+              <small *ngIf="formulario.controls.nombre.valid" class="text-success">Correcto</small>
+            
+          </div>
+          
+          <div class="form-group">
+              
+              <label for="precio">Precio</label>
+              <input type="text" formControlName="precio" value="{{objeto.precio}}" class="form-control" name="precio">
+              <small *ngIf="formulario.controls.precio.invalid " class="text-danger">Errores de validacion minimi 2 caracteres maximo 50</small>
+              <small *ngIf="formulario.controls.precio.valid" class="text-success">Correcto</small>
+            
+          </div>
+          
+          <div class="form-group">    
+              <label for="precio">calorias</label>
+              <input type="text" formControlName="calorias" value="{{objeto.calorias}}" class="form-control" name="calorias">
+              <small *ngIf="formulario.controls.calorias.invalid " class="text-danger">Errores de validacion entre 1 y 50 caracteres</small>
+              <small *ngIf="formulario.controls.calorias.valid" class="text-success">Correcto</small>       
+          </div>
+        </div>
+        <div class="form-row justify-content-md-center">
+          <div class="form-group">    
+              <label for="oferta">Oferta</label>
+              <input type="checkbox" formControlName="oferta" value="{{objeto.oferta}}" class="form-control" name="oferta">
+              <small *ngIf="formulario.controls.oferta.invalid " class="text-danger">Errores de validacion en oferta</small>
+                <small *ngIf="formulario.controls.oferta.valid" class="text-success">Correcto</small>             
+          </div>
+          <div class="form-group">    
+              <label for="descuento">Descuento</label>
+              <input type="number" formControlName="descuento" value="{{objeto.descuento}}" class="form-control" name="descuento">   
+              <small *ngIf="formulario.controls.descuento.invalid " class="text-danger">Errores de validacion en descuento</small>
+                <small *ngIf="formulario.controls.descuento.valid" class="text-success">Correcto</small>             
+          </div>
+          
+          </div>
+          <div class="form-row justify-content-md-center">    
+            <div class="form-group">               
+                <!-- <a  class="btn btn-success" (click)="nuevoColor()">Nuevo Color</a>
+                <button class="btn btn-danger" (click)="eliminarColor(x)">Eliminar color</button> -->
+                <!-- Colores existentes-->
+               <div formArrayName="colores">
+                    <div *ngFor="let color of _objeto.colores; let x = index;">
+                     
+                        {{x}}  {{getColores()[x].color}} <input type="color"  value="{{color.color}}"  name="color"  ><i class="fas fa-trash-alt text-danger" (click)="eliminarColorExistente(x)"></i><i class="fas fa-edit" (click)="editarColor(x,color.color)" ></i>
+
+                    </div> 
+               </div>
+               
+                 <div class="form-row">
+                    <div class="form-group">               
+                        <a  class="btn btn-success" (click)="nuevoColor()">Nuevo Color</a>
+                        <div formArrayName="coloresNuevos">
+                            <div *ngFor="let color of formulario.get('coloresNuevos').controls; let i = index;">                                       
+                                <div [formGroupName]="i">
+                                    <input type="color" formControlName="colorNuevo"  class="form-control" name="colorNuevo"><i class="fas fa-trash-alt text-danger" (click)="eliminarColorNuevo(i)"></i>
+                                </div>                   
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- <div class="form-row">
+                        <div class="form-group">               
+                            Colores del objeto
+                            <div formArrayName="coloresNuevos2">
+                                <div *ngFor="let color of formulario.get('coloresNuevos2').controls; let i = index;">                                       
+                                    <div [formGroupName]="i">
+                                        <input type="color" formControlName="colorNuevo2"  class="form-control" name="colorNuevo2"><i class="fas fa-trash-alt text-danger" (click)="eliminarColorNuevo(i)"></i>
+                                    </div>                   
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+            </div>
+            <div class="form-group">
+                <div class="form-group">    
+                    <label for="imagen">Imagen</label>
+                    <input type="text" formControlName="imagen" class="form-control" name="imagen">
+                    <small *ngIf="formulario.controls.imagen.invalid " class="text-danger">Errores de validacion en imagen revise la extension de la ruta</small>
+                    <small *ngIf="formulario.controls.imagen.valid" class="text-success">Correcto</small>             
+                </div>
+            </div>
+            
+          </div>
+          
+          <input type="submit" class="btn btn-info" value="Editar" [disabled]="formulario.status === 'INVALID'">
+          
+    
+      </form>
+    
+  </div>
+</div>
+
+
+<!-- <a [routerLink]="['/../frutas-crud']">Volver</a> -->
