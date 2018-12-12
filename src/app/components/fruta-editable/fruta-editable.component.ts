@@ -31,9 +31,13 @@ export class FrutaEditableComponent implements OnInit {
   color : FormControl;
   colorNuevo : FormControl;
   frutaEditable : Frutas;
+  mensaje:string;
+  hayMensaje:boolean;
   
 
   constructor(private route: ActivatedRoute,public frutaService : FrutaService) {
+    this.mensaje = "";
+    this.hayMensaje = false;
     this.frutaEditable = new Frutas();
     this.color= new FormControl();
     this.colorNuevo = new FormControl();
@@ -155,6 +159,8 @@ export class FrutaEditableComponent implements OnInit {
     this.frutaService.actualizar(this.frutaEditable).subscribe(data =>{
       console.debug(data);
       this._objeto = data;
+      this.mensaje = "La edicion a sido correcta";
+      this.hayMensaje =true;
     })
     let arrayColores = this.formulario.get('coloresNuevos') as FormArray;
     arrayColores.controls.splice(0);
@@ -209,6 +215,10 @@ export class FrutaEditableComponent implements OnInit {
     this.eliminarColorExistente(indice);
 
     
+  }
+
+  cerrarAlerta(){
+    this.hayMensaje = false;
   }
 
 

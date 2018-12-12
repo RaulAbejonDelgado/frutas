@@ -46,7 +46,7 @@
       "descuento": 7
     },
     {
-      "id": 5,
+      "id": 4,
       "nombre": "fresa",
       "precio": 2.55,
       "calorias": 345,
@@ -61,43 +61,218 @@
       "imagen": "https://static9.depositphotos.com/1642482/1149/i/450/depositphotos_11491656-stock-photo-strawberry.jpg"
     },
     {
-      "nombre": "fresat",
-      "precio": 2.55,
-      "calorias": 222,
-      "cantidad": 0,
+      "id": 5,
+      "nombre": "Banana",
+      "precio": "3.20",
+      "calorias": 500,
       "colores": [
         {
-          "color": "#ebf130"
-        },
-        {
-          "color": "#0ae5ea"
+          "color": "#d2140b"
         }
       ],
-      "descuento": 8,
-      "imagen": "https://picsum.photos/300/300/?random",
+      "oferta": true,
+      "descuento": 20,
+      "imagen": "http://padeladdict.com/wp-content/uploads/2012/12/platano2.jpg"
+    },
+    {
+      "nombre": "Melocoton",
+      "precio": 0.75,
+      "calorias": 5,
+      "cant": 1,
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "https://www.frutadelasarga.com/server/Portal_0008706/img/products/melocoton-de-cieza_1677407.jpg",
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "nombre": "Manzana",
+      "precio": 2.3,
+      "calorias": 13,
+      "cant": 1,
+      "oferta": false,
+      "descuento": 5,
+      "imagen": "http://www.redagricola.com/cl/assets/uploads/2017/08/manazana-792x591-c-default.jpg",
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "nombre": "uva",
+      "precio": 0.6,
+      "calorias": 2,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": true,
+      "descuento": 15,
+      "imagen": "http://www.triamax.com/wp-content/uploads/2015/02/uvas.jpg",
+      "cantidad": 5,
+      "id": 6
+    },
+    {
+      "nombre": "Melon",
+      "precio": 1,
+      "calorias": 2,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://www.webconsultas.com/sites/default/files/styles/encabezado_articulo/public/migrated/melon.jpg",
+      "cantidad": 5,
+      "id": 7
+    },
+    {
+      "nombre": "sandia",
+      "precio": 2,
+      "calorias": 2,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://www.comenaranjas.com/images/stories/virtuemart/product/sandia-rayada.jpg",
+      "cantidad": 5,
+      "id": 8
+    },
+    {
+      "nombre": "albaricoque",
+      "precio": 3,
+      "calorias": 2,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": true,
+      "descuento": 5,
+      "imagen": "https://www.hogarmania.com/archivos/201307/albaricoque3-xl-668x400x80xX.jpg",
+      "cantidad": 5,
       "id": 9
     },
     {
+<<<<<<< HEAD
       "id": 12,
       "nombre": "sdfdsfs",
       "precio": 4,
       "calorias": 87,
       "cantidad": 0,
+=======
+      "nombre": "coco",
+      "precio": 4,
+      "calorias": 1,
       "colores": [
         {
-          "color": "#17e832"
-        },
-        {
-          "color": "#400080"
-        },
-        {
-          "color": "#ff80ff"
-        },
-        {
-          "color": "#0a0af5"
+          "color": "#d2140b"
         }
       ],
       "oferta": false,
+      "descuento": 0,
+      "imagen": "https://www.abc.es/media/sociedad/2016/08/05/agua-coco-propiedades2-kfwC--620x349@abc.jpg",
+      "cantidad": 5,
+      "id": 10
+    },
+    {
+      "nombre": "Granada",
+      "precio": 3.8,
+      "calorias": 25,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": true,
+      "descuento": 20,
+      "imagen": "https://zumodegranada.com/wp-content/uploads/2017/06/granada_web_15.jpg",
+      "cantidad": 1,
+      "id": 11
+    },
+    {
+      "nombre": "Kiwi",
+      "precio": 1.2,
+      "calorias": 47,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": false,
+      "descuento": 5,
+      "imagen": "https://static.vix.com/es/sites/default/files/imj/vivirsalud/1/142534212.jpg",
+      "cantidad": 1,
+      "id": 12
+    },
+    {
+      "nombre": "Cereza",
+      "precio": 3.8,
+      "calorias": 12,
+>>>>>>> 1750a342c09445f5ecc4382100f2d73167daf677
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "https://www.frutadelasarga.com/server/Portal_0008706/img/products/cereza-temprana_2930904.jpg",
+      "cantidad": 1,
+      "id": 13
+    },
+    {
+      "nombre": "Frambuesa",
+      "precio": 0.4,
+      "calorias": 5,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": false,
+      "descuento": 5,
+      "imagen": "https://www.enterbio.es/8232-large_default/frambuesa.jpg",
+      "cantidad": 1,
+      "id": 14
+    },
+    {
+      "nombre": "Piña",
+      "precio": 4.3,
+      "calorias": 100,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": true,
+      "descuento": 35,
+      "imagen": "https://www.heb.com.mx/media/catalog/product/cache/20/image/d954a60aa48ef57022b0eb878e93bc1f/p/i/pina-miel-gold115389_x1.jpg",
+      "cantidad": 1,
+      "id": 15
+    },
+    {
+      "nombre": "Naranja",
+      "precio": 0.9,
+      "calorias": 43,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": false,
+<<<<<<< HEAD
       "descuento": 9,
       "imagen": "https://picsum.photos/300/300/?random"
     },
@@ -115,11 +290,90 @@
         },
         {
           "color": "#e37f07"
+=======
+      "descuento": 5,
+      "imagen": "https://www.frutadelasarga.com/server/Portal_0008706/img/products/naranja-navelina_1241713.jpg",
+      "cantidad": 1,
+      "id": 16
+    },
+    {
+      "nombre": "Mango",
+      "precio": 2.8,
+      "calorias": 55,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": true,
+      "descuento": 15,
+      "imagen": "https://www.fruteriadevalencia.com/wp-content/uploads/2015/02/MANGO-buena.jpg",
+      "cantidad": 1,
+      "id": 17
+    },
+    {
+      "nombre": "Mora",
+      "precio": 0.15,
+      "calorias": 2.3,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": false,
+      "descuento": 5,
+      "imagen": "https://www.enterbio.es/8233-large_default/mora.jpg",
+      "cantidad": 1,
+      "id": 18
+    },
+    {
+      "nombre": "Limon",
+      "precio": 1.05,
+      "calorias": 36,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": true,
+      "descuento": 10,
+      "imagen": "https://cronicaglobal.elespanol.com/uploads/s1/95/08/34/limon.jpg",
+      "cantidad": 1,
+      "id": 19
+    },
+    {
+      "nombre": "Higo",
+      "precio": 0.75,
+      "calorias": 2.3,
+      "colores": [
+        {
+          "color": "#d2140b"
+        }
+      ],
+      "oferta": false,
+      "descuento": 5,
+      "imagen": "https://biotrendies.com/wp-content/uploads/2015/06/Higos.jpg",
+      "cantidad": 1,
+      "id": 20
+    },
+    {
+      "nombre": "adasdas",
+      "precio": 2,
+      "calorias": 0,
+      "colores": [
+        {
+          "color": "#f4fb04"
+>>>>>>> 1750a342c09445f5ecc4382100f2d73167daf677
         }
       ],
       "oferta": false,
       "descuento": 0,
+<<<<<<< HEAD
       "imagen": "https://picsum.photos/300/300/?random"
+=======
+      "imagen": "https://picsum.photos/300/300/?random",
+      "id": 21
+>>>>>>> 1750a342c09445f5ecc4382100f2d73167daf677
     }
   ]
 }

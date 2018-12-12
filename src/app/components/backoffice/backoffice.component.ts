@@ -37,9 +37,9 @@ export class BackofficeComponent implements OnInit {
     this.simple.setValue("fresa");//para setear valores por defecto en un formulario
     //agrupacion de inputs de un formulario
     this.formulario = new FormGroup({
-      nombre : new FormControl('',[Validators.required, Validators.minLength(2), Validators.maxLength(45)]),
+      nombre : new FormControl('',[Validators.required, Validators.minLength(5), Validators.maxLength(45)]),
       precio : new FormControl(0,[Validators.required,Validators.minLength(1),Validators.maxLength(5)]),
-      calorias : new FormControl(0,[Validators.required,Validators.minLength(0)]),
+      calorias : new FormControl(0),
       colores: new FormArray( [ this.crearColorFormGroup() ], Validators.minLength(0)),// quito para que inicialmente solo aparezca un campo color al inicializarse, this.crearColorFormGroup(),
       oferta : new FormControl(false),
       descuento : new FormControl(0),
@@ -61,6 +61,8 @@ export class BackofficeComponent implements OnInit {
   sumitar(){
     console.log("FormulariooComponent - sumitar %o",  this.formulario);
     let fruta = new Frutas();
+
+    console.log("controls %o" ,this.formulario.controls.nombre.errors);
     fruta.nombre = this.formulario.controls.nombre.value;
     fruta.precio = this.formulario.controls.precio.value;
     fruta.calorias = this.formulario.controls.calorias.value;
@@ -131,10 +133,19 @@ export class BackofficeComponent implements OnInit {
 
   eliminar(id: number){
     console.log(id);
-    this.frutaService.delete(id).subscribe(data =>{
-      console.debug("Eliminado data");
-      this.recargarLista();
-    })
+    let txt;
+    let r = confirm("Esta apunto de eliminar un registro");
+    if (r == true) {
+      this.frutaService.delete(id).subscribe(data =>{
+        console.debug("Eliminado data");
+        this.mensaje = "registro borrado correctamente";
+        this.hayMensaje = true;
+        this.recargarLista();
+      })
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    
   }
 
   mostrarFruta(fruta: Frutas){
