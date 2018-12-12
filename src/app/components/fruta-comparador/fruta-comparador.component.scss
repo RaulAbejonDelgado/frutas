@@ -7,5 +7,101 @@
 }
 
 .carrito {
-    background :rgb(86, 144, 182);
+    background :#5690b6;
+    margin-left: 40px;
+    opacity: 0.8;
 }
+
+
+
+.boton-buscador{
+   text-align: right;
+   margin-right: -5vh ;
+}
+
+#textoBusqueda{
+    width: 180px;
+}
+
+.fruta-card{
+    margin-top: -50px;
+}
+
+@media (max-width: 991px) {
+    .carrito{
+        position: fixed;
+        top:0;
+        right: 0;
+    }
+    .fruta-card-1{
+        margin-bottom:40px;
+    }
+    .fruta-card-2{
+        margin-left: auto;
+    }
+
+    }
+
+@media (max-width: 914px) {
+    .carrito{
+        position: fixed;
+        margin-bottom: 50px;
+        top:0;
+        right: 0;
+        width: 9rem !important;
+
+    }
+
+    }
+    @media (max-width: 768px) {
+        .carrito{
+            position: fixed;         
+            right: 0;
+            display: none;
+            width: 100% !important;
+
+        }
+        .carritoMobile{
+            position:fixed;
+            right:  0;
+        }
+
+
+    
+        }
+
+@media (max-width: 574px) {
+    .card{
+        margin-left: auto;
+    }
+
+    .carritoMobile{
+        position:unset;
+        text-align: center;
+
+    }
+
+    
+   
+    }
+
+@media (max-width: 394px) {
+    .carrito{
+        position: fixed;
+        top:200px;
+        right: 0;
+        width: 4rem !important;
+
+    }
+    .card{
+        margin-left: auto;
+    }
+    }
+@media (max-width: 320px) {
+    .fruta-card-1{
+        width: 50%;
+    }
+    .fruta-card-2{
+        margin-left: auto;
+    }
+    }

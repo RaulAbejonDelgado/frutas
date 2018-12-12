@@ -1,9 +1,36 @@
+body{
+    background: white !important;
+}
 img{
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
+    margin:5px;
+}
+i{
+    margin-left: 5px;
 }
 
 table > * > * > * {
     border: 1px solid grey;
+    background:  #59B557;
+    text-align: center;
 }
+
+table > thead > th {
+    background: grey;
+
+}
+
+form{
+    border:1px solid black;
+    padding: 10px;
+    background: #59B557;
+}
+
+
+.container{
+    background: white;
+}
+
+
 

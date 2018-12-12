@@ -1,21 +1,28 @@
 <div class="row">
-    <div class="col-3">
-            <button (click)="getAllFrutas()" [hidden]="!frutasOferta">Todas las frutas</button>
-            <button (click)="frutasOfertas()" [hidden]="frutasOferta">Frutas en oferta</button>
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-12"  >
+            <button (click)="getAllFrutas()" [hidden]="!frutasOferta" class="btn btn-info btn-lg btn-block">Todas las frutas</button>
+            <button (click)="frutasOfertas()" [hidden]="frutasOferta" class="btn btn-info btn-lg btn-lg btn-block">Frutas en oferta</button>
     </div>
-    <div class="col-4">
-        <form #formularioBusqueda="ngForm" (ngSubmit)="buscarTexto(formularioBusqueda)">
-            <input type="text" name="textoBusqueda"  [(ngModel)]="textoBusqueda" placeholder="Buscador de frutas">
-            <button>Buscar</button>
-        </form>
+    <div class="col-xl-4 col-lg-1 col-md-1 col-sm-12 col-12" > 
+            <i class="fas fa-shopping-cart fa-3x carritoMobile" (click)="mostrarCarrito()"></i> 
     </div>
-    <div class="col-4">
-    
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1" >
+        
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-3 col-sm-6 col-12" >
+        <div class="boton-buscador">
+                
+            <form #formularioBusqueda="ngForm" (ngSubmit)="buscarTexto(formularioBusqueda)">
+                <input type="text" id="textoBusqueda" name="textoBusqueda"  [(ngModel)]="textoBusqueda" placeholder="Buscador de frutas">
+                <button class="btn btn-primary mb-2 ">Buscar</button>
+               
+            </form>
+        </div>
     </div>
 </div>
 <div class="row">
         
-  <div class="col-2">
+  <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-12 menu-frutas">
     
     
     <div [hidden]="!frutasOferta">
@@ -31,35 +38,32 @@
                 
         </ul>
     </div>
-    <!-- {{mostrarResultadoBusqueda}}
-    <div [hidden]="!mostrarResultadoBusqueda">
-            <ul>
-                <li  *ngFor="let f of arrayFrutasFiltradas" (click)="mostrarFrutas(f)"  class="list-group-item" [class.active]="f == frutaSeleccionada || f == frutaSeleccionada2"  >{{f.nombre}}</li> 
-                    
-            </ul>
-        </div> -->
     
   </div>
     
-    <div class="col-3" >
+    <div class="col-xl-3 col-lg-3 col-md-8 col-sm-8 col-12 fruta-card-1" >
         <app-fruta-card [_objeto]="frutaSeleccionada" (clickCompra)="actualizarCarrito($event)"></app-fruta-card>
     </div>
-    <div class="col-3" [hidden]="mostrarResultadoBusqueda">
+    <div class="col-xl-3 col-lg-3 col-md-8 col-sm-8 col-12 fruta-card-2" [hidden]="mostrarResultadoBusqueda">
         <app-fruta-card [_objeto]="frutaSeleccionada2" (clickCompra)="actualizarCarrito($event)"></app-fruta-card>
     </div>
 
-  <div class="col-3">
-      Carrito
-      <div class="card carrito" style="width: 17rem;">
-
+  <div class="col-xl-4 col-lg-3 col-md-8 col-sm-8 col-12" >
+      <div class="card carrito" id="carrito" style="width: 17rem;">
+            <i class="far fa-times-circle fa-3x" (click)="mostrarCarrito()"></i>
           <div class="card-body">
-            <h5 class="card-title">Precio total :{{totalPrecioFrutasClickados}} €</h5>
+            <h5 class="card-title">Precio total :{{totalPrecioFrutasClickados | number:'1.2-2'}} €</h5>
             
             <p>Fruta </p>
-            <p *ngFor="let f of carrito">Fruta:{{f.nombre}} <br> Precio total : {{f.total}} <br> <button (click)="restarUno(f)">-</button> Total Selecionados : {{f.cantidad}}<button (click)="sumarUno(f)">+</button> </p>
+            <p *ngFor="let f of carrito; let i = index;">
+                 Fruta:{{f.nombre}} &nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-trash-alt fa-2x text-danger" (click)="eliminarFrutaCarrito(i)"></i> <br>
+                 Precio total : {{f.total | number:'1.2-2'}}  <br>
+                 <button (click)="restarUno(f, index)">-</button>
+                     Total Selecionados : {{f.cantidad}}
+                <button (click)="sumarUno(f, index)">+</button> </p>
+
             <button (click)="comprar()" class="btn btn-block btn-info">Comprar</button>
           </div>
-  
       </div>
   </div>
 

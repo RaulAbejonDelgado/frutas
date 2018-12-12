@@ -20,11 +20,15 @@ export class BackofficeComponent implements OnInit {
   frutaDetalle : Frutas;
   formularioNuevo : boolean;
   mostrarTabla: boolean;
+  mensaje : string;
+  hayMensaje : boolean;
 
   constructor(public frutaService : FrutaService) { 
     console.trace("FormulariooComponent -constructor ");
     this.formularioNuevo = true;
     this.frutas = [];
+    this.mensaje = "";
+    this.hayMensaje = false;
 
 
     this.color= new FormControl();
@@ -65,9 +69,13 @@ export class BackofficeComponent implements OnInit {
     fruta.imagen = this.formulario.controls.imagen.value;
     this.frutaService.add(fruta).subscribe(data =>{
       console.debug(data);
+      
       this.recargarLista();
       this.vaciarFormulario();
+      
     })
+    this.mensaje="Registro creado con exito";
+    this.hayMensaje = true;
     
 
   }
@@ -140,5 +148,9 @@ export class BackofficeComponent implements OnInit {
 
   mostrarOcultarTabla(){
     this.mostrarTabla = !this.mostrarTabla;
+  }
+
+  cerrarAlerta(){
+    this.hayMensaje = false;
   }
 }

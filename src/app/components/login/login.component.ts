@@ -33,13 +33,13 @@ export class LoginComponent implements OnInit {
 
     this.mensaje = "Todo llamar servicio";
     this.formulario = new FormGroup({
-      nombre : new FormControl('',
+      nombre : new FormControl('admin',
                               [
                                 Validators.required,
                                 Validators.minLength(2),
                                 Validators.maxLength(25)
                               ]),
-      password: new FormControl('',
+      password: new FormControl('12345678',
                                 [
                                   Validators.required,
                                   Validators.minLength(6),

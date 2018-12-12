@@ -5,27 +5,34 @@
   {{mensaje}}
 </p>
 <ul>
-  <li><b>nombre</b> : admin</li>
-  <li><b>password </b>: 12345678</li>
-</ul>
-<form [formGroup]="formulario" (ngSubmit)="sumitar()">
-  {{formulario.status | json}}
-  {{formulario.value | json}}
-  <div class="form-group">
-    <label for="nombre"> Nombre:</label>
-   
-    <input type="text" formControlName="nombre" class="form-control" value="admin" name="nombre">
-    <!-- <small *ngIf="formulario.controls.nombre.invalid" class="text-danger">Errores de validacion minimi 2 caracteres maximo 50</small>
-    <small *ngIf="formulario.controls.nombre.valid" class="text-success">Correcto</small> -->
+    <li><b>nombre</b> : admin</li>
+    <li><b>password </b>: 12345678</li>
+  </ul>
+<div class="row login-div justify-content-md-center">
   
+  <div class="col-xl-5 col-lg-5 col-md-6 col-sm-10 col-12 login">
+      <h3><b>Administración</b></h3>
+      <p>Por favor introduzca su usuario y contraseña</p>
+      <form [formGroup]="formulario" (ngSubmit)="sumitar()">
+          {{formulario.status | json}}
+          {{formulario.value | json}}
+          <div class="form-group">
+            <label for="nombre"> Nombre:</label>
+           
+            <input type="text" formControlName="nombre" class="form-control" value="admin" name="nombre" placeholder="Entre 3 y 50 caracteres">
+            <!-- <small *ngIf="formulario.controls.nombre.invalid" class="text-danger">Errores de validacion minimi 2 caracteres maximo 50</small>
+            <small *ngIf="formulario.controls.nombre.valid" class="text-success">Correcto</small> -->
+          
+        </div>
+        <div class="form-group">
+          <label for="nombre"> Contraseña:</label>
+         
+          <input type="text" formControlName="password" class="form-control" value="12345678" name="password" placeholder="Entre 3 y 50 caracteres">
+          <!-- <small *ngIf="formulario.controls.nombre.invalid" class="text-danger">Errores de validacion minimi 2 caracteres maximo 50</small>
+          <small *ngIf="formulario.controls.nombre.valid" class="text-success">Correcto</small> -->
+        
+        </div>
+        <input type="submit" value="entrar"  ><!--[disbled]="formulario.status === VALID"-->
+        </form>
+  </div>
 </div>
-<div class="form-group">
-  <label for="nombre"> Password:</label>
- 
-  <input type="text" formControlName="password" class="form-control" value="12345678" name="password">
-  <!-- <small *ngIf="formulario.controls.nombre.invalid" class="text-danger">Errores de validacion minimi 2 caracteres maximo 50</small>
-  <small *ngIf="formulario.controls.nombre.valid" class="text-success">Correcto</small> -->
-
-</div>
-<input type="submit" value="entrar"  ><!--[disbled]="formulario.status === VALID"-->
-</form>

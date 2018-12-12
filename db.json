@@ -1,39 +1,11 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  },
-  "tareas": [
-    {
-      "id": 1,
-      "titulo": "Hacer filtrado",
-      "terminado": true
-    },
-    {
-      "id": 3,
-      "titulo": "Todavia no se",
-      "terminado": false
-    }
-  ],
   "frutas": [
     {
       "id": 1,
       "nombre": "Pera",
-      "precio": "4.32",
+      "precio": 4.32,
       "calorias": 500,
+      "cantidad": 0,
       "colores": [
         {
           "color": "#DEE8DE"
@@ -76,7 +48,7 @@
     {
       "id": 5,
       "nombre": "fresa",
-      "precio": "2.55",
+      "precio": 2.55,
       "calorias": 345,
       "cantidad": 0,
       "colores": [
@@ -108,8 +80,9 @@
     {
       "id": 12,
       "nombre": "sdfdsfs",
-      "precio": "4",
+      "precio": 4,
       "calorias": 87,
+      "cantidad": 0,
       "colores": [
         {
           "color": "#17e832"
@@ -127,38 +100,26 @@
       "oferta": false,
       "descuento": 9,
       "imagen": "https://picsum.photos/300/300/?random"
-    }
-  ],
-  "juegos": [
-    {
-      "titulo": "diablo",
-      "imagen": "",
-      "precio": 35,
-      "anio": 1998,
-      "alquilado": false,
-      "descripcion": "loren",
-      "cantidad": 0,
-      "descuento": 0
     },
     {
-      "titulo": "fallout",
-      "imagen": "",
-      "precio": 35,
-      "anio": 1998,
-      "alquilado": false,
-      "descripcion": "loren",
-      "cantidad": 0,
-      "descuento": 0
-    },
-    {
-      "titulo": "lineage2",
-      "imagen": "",
-      "precio": 35,
-      "anio": 1998,
-      "alquilado": false,
-      "descripcion": "loren",
-      "cantidad": 0,
-      "descuento": 0
+      "id": 15,
+      "nombre": "asdas",
+      "precio": "32",
+      "calorias": 0,
+      "colores": [
+        {
+          "color": "#ebec1d"
+        },
+        {
+          "color": "#64ea07"
+        },
+        {
+          "color": "#e37f07"
+        }
+      ],
+      "oferta": false,
+      "descuento": 0,
+      "imagen": "https://picsum.photos/300/300/?random"
     }
   ]
 }
