@@ -9,7 +9,11 @@ import { Router } from '../../../../node_modules/@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private loginService:LoginService,private router: Router) { }
+  estaLogueado : boolean;
+
+  constructor(private loginService:LoginService,private router: Router) { 
+    this.estaLogueado = false; 
+  }
 
   ngOnInit() {
   }
@@ -18,5 +22,13 @@ export class NavbarComponent implements OnInit {
     this.loginService.logOut();
     this.router.navigate(['home']);
   }
+
+  isLogued(){
+
+    this.estaLogueado = this.loginService.isLogged();
+    console.log(this.estaLogueado);
+  }
+
+ 
 
 }

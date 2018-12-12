@@ -12,6 +12,7 @@ import { BackofficeComponent } from './components/backoffice/backoffice.componen
 import { LoginComponent } from './components/login/login.component';
 import { BackofficeGuard } from './guards/backoffice.guard';
 import { FrutaEditableComponent } from './components/fruta-editable/fruta-editable.component';
+import { DestacarDirective } from './directives/destacar.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FrutaEditableComponent } from './components/fruta-editable/fruta-editab
     NavbarComponent,
     BackofficeComponent,
     LoginComponent,
-    FrutaEditableComponent
+    FrutaEditableComponent,
+    DestacarDirective
   ],
   imports: [
     BrowserModule,

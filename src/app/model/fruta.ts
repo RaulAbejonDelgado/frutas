@@ -30,7 +30,7 @@ export class Frutas {
         this._oferta = false;
         this._descuento = 3;
         this._imagen = "https://soycomocomo.es/media/2015/06/melocoton-1.jpg";
-        this._cantidad = 1;
+        this._cantidad = 0;
         this._total = 0;
     }
     

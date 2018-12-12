@@ -14,13 +14,14 @@ export class LoginComponent implements OnInit {
 
   formulario : FormGroup;
   mensaje: string;
+  logueo : boolean;
   usuario: Usuario;
 
 
   constructor(private loginService : LoginService, private router: Router) { 
     console.trace("LoginComponent - constructor ");
 
-
+    this.logueo = false;
     this.crearFormulario();
   }
 
@@ -31,19 +32,19 @@ export class LoginComponent implements OnInit {
   private crearFormulario(){
     console.trace("LoginComponent - crearFormulario");
 
-    this.mensaje = "Todo llamar servicio";
+    this.mensaje = "";
     this.formulario = new FormGroup({
-      nombre : new FormControl('',
+      nombre : new FormControl('admin',
                               [
                                 Validators.required,
                                 Validators.minLength(2),
-                                Validators.maxLength(25)
+                                Validators.maxLength(50)
                               ]),
-      password: new FormControl('',
+      password: new FormControl('12345678',
                                 [
                                   Validators.required,
                                   Validators.minLength(6),
-                                Validators.maxLength(25)
+                                Validators.maxLength(50)
                                 ])
     })
   }
@@ -69,7 +70,8 @@ export class LoginComponent implements OnInit {
     if(this.loginService.login(u)){
       this.router.navigate(['privado']);
     }else{
-      this.mensaje = "Credenciales no validas, prueba de nuevo"
+      this.mensaje = "Credenciales no validas, prueba de nuevo";
+      this.logueo = false;
     }
 
   }

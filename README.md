@@ -1,27 +1,9 @@
 # Frutas
+Este proyecto carga contra json-server  para que la pagina se recarge con datos, es necesario levantar el servicio json-server desde la raiz del proyecto con el siguiente comando json-server --watch db.json desde la terminal.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+Para arrancar la aplicacion previamente en la raiz del proyecto debemos hacer un npm install, para instalar las dependencias de node, una vez hecho esto, podemos arrancar la aplicacion con ng serve --o y esto nos abrira una ventana en nuestro explorador de internet con la pagina. Si la pantalla del navegador no se habre podemos ir a la siguiente direccion http://localhost:4200
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

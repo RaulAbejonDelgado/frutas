@@ -1,17 +1,25 @@
 <div class="card" style="width: 18rem;">
-    <h5 class="card-title">{{_objeto.nombre == 'Melocoton' ? 'Melocoton(fruta demo)': _objeto.nombre}}</h5>
-    <img class="card-img-top" src="{{_objeto.imagen }}" alt="Card image cap">
-    <div class="card-body">
-      
-      <p class="card-text">Precio : {{_objeto.precio }}</p>
-      <p class="card-text">Calorias : {{_objeto.calorias }}</p>
-      <p class="card-text" *ngFor="let c of _objeto.colores" ><input type="color" value="{{c.color  }}" readonly></p>
-      <p class="card-text">Oferta : {{_objeto.oferta == false ? 'Sin oferta' : 'Oferta'}}</p>
-      <p class="card-text">Descuento {{_objeto.descuento }} %</p>
-      <p ng-if="!objeto.oferta" class="card-text">Precio : {{objeto.precio | currency:'EUR'}}</p>
-        <p ng-if="objeto.oferta" class="card-text">Precio :<del> {{objeto.precio | currency:'EUR'}}</del> , Descuento :
-          {{(objeto.precio*objeto.descuento / 100 | number:'1.2-2')}}, total Precio final :
-          {{(objeto.precio*objeto.descuento / 100) - objeto.precio | number:'1.2-2'}} </p>
-      <button (click)="comprar()" class="btn btn-block btn-outline-primary">Comprar</button>
-    </div>
+  <h5 class="card-title">{{_objeto.nombre == 'Melocoton' ? 'Melocoton(fruta demo)': _objeto.nombre}}</h5>
+  <img class="card-img-top" src="{{_objeto.imagen }}" alt="Card image cap">
+  <div class="card-body">
+
+    <p class="card-text">Calorias : {{_objeto.calorias }} kcal</p>
+    <p class="card-text">Oferta : {{_objeto.oferta == false ? 'No' : 'Si'}}</p>
+
+    <p *ngIf="!_objeto.oferta" class="card-text">
+      Precio : {{_objeto.precio | currency:'EUR'}}
+      <br> Descuento :
+      {{_objeto.descuento}} % - {{(_objeto.precio*objeto.descuento / 100 | number:'1.2-2')}} €
+      <br> Precio final :
+      {{_objeto.precio | number:'1.2-2'}} </p>
+
+    <p *ngIf="_objeto.oferta" class="card-text">Precio :<del class="text-danger"> <b>{{_objeto.precio |
+          currency:'EUR'}}</b></del>
+      <br> Descuento :
+      {{_objeto.descuento}} % - {{(_objeto.precio*objeto.descuento / 100 | number:'1.2-2')}} €
+      <br> Precio final :
+       {{ _objeto.precio - (_objeto.precio*objeto.descuento / 100)   | number:'1.2-2'}} </p>
+
+    <button (click)="comprar()" class="btn btn-block btn-outline-primary">Comprar</button>
   </div>
+</div>
