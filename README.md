@@ -5,7 +5,9 @@ Desde la raiz del proyecto con el siguiente comando json-server --watch db.json 
 
 Para arrancar la aplicacion previamente en la raiz del proyecto debemos hacer un npm install, para instalar las dependencias de node, una vez hecho esto, podemos arrancar la aplicacion con ng serve --o y esto nos abrira una ventana en nuestro explorador de internet con la aplicacion. Si la pantalla del navegador no se habre podemos ir a la siguiente direccion http://localhost:4200
 
-![alt text](https://github.com/RaulAbejonDelgado/frutas/tree/master/src/assets/principal.png )
+![alt text](https://github.com/RaulAbejonDelgado/frutas/blob/master/src/assets/principal.png )
+
+https://github.com/RaulAbejonDelgado/frutas/blob/master/src/assets/principal.png
 
 
 
